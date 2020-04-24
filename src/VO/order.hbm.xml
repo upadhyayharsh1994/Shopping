@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="VO.orderVO" table="order">
+   
+   	<id name="orderId" type="int" column="orderId">
+   		<generator class="increment"/>
+  	</id>
+
+  	<property name="orderName">
+  		<column name="orderName"/>
+  	</property>
+  	
+ 	<property name="price" type="int">
+   		<column name="price"/>
+  	</property>
+  
+  <many-to-one name="userIdd" class="VO.loginVO" column="userIdd"></many-to-one>
+  <many-to-one name="cardId" class="VO.cardDetailsVO" column="cardId"></many-to-one>
+  
+	
+   </class>
+
+</hibernate-mapping>
